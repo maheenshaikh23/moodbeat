@@ -11,7 +11,7 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
   results.innerHTML = `<p>Loading...</p>`;
 
   try {
-    const res = await fetch("http://localhost:3000/api/recommendations", {
+    const res = await fetch("https://moodbeat.onrender.com/api/recommendations", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ moodOrArtist: input }),
