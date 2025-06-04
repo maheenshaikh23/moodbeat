@@ -26,14 +26,15 @@ document.getElementById("submitBtn").addEventListener("click", async () => {
     results.innerHTML = data.playlist
   .map(
     (song) => `
-      <div class="bg-blue-800 p-4 rounded-lg shadow-md hover:bg-blue-700 transition">
-        <p class="text-lg font-semibold text-cyan-200">${song.title}</p>
-        <p class="text-sm text-gray-300 mb-2">by ${song.artist}</p>
-        <a href="${song.link}" target="_blank" class="text-cyan-400 underline hover:text-cyan-300">🎵 Listen on Last.fm</a>
+      <div class="song-card">
+        <p class="song-title">${song.title}</p>
+        <p class="song-artist">by ${song.artist}</p>
+        <a href="${song.link}" target="_blank" class="underline text-cyan-400">🎧 Listen</a>
       </div>
     `
   )
   .join("");
+
 
   } catch (err) {
     results.innerHTML = `<p class="text-red-500">Something went wrong.</p>`;
